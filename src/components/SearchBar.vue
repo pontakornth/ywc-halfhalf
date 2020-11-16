@@ -8,7 +8,9 @@
        </div>
       <div class="InputBar">
         <input class="Input" v-model="term" placeholder="ค้นหา ชื่อ ร้านอาหาร และเครื่องดื่ม">
-        <button class="SearchButton"></button>
+        <button class="SearchButton">
+            <span class="Icon"></span>
+        </button>
       </div>
       <img src="../assets/filter.png" class="Filter" />
      </div>
