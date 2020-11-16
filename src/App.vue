@@ -1,15 +1,19 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3.0 + Vite" />
+   <div class="Page">
+     <search-bar/>
+   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import SearchBar from './components/SearchBar.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    SearchBar
   }
 }
 </script>
+<style lang="postcss">
+
+</style>
