@@ -1,3 +1,5 @@
+const atImport = require('postcss-import')
+const nested = require('postcss-nested')
 const autoprefixer = require('autoprefixer')
 const tailwindcss = require('tailwindcss')
 // const purgecss = require('purgecss')
