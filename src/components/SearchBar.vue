@@ -41,7 +41,9 @@ export default {
 
 .InputBar {
  @apply flex h-full ml-auto h-auto items-center rounded-lg overflow-hidden mr-4 ; 
- @apply border;
+ @apply relative;
+ flex: 1 1 0%; 
+ box-shadow: black 0px 0px 1px; 
 }
 
 .Input {
