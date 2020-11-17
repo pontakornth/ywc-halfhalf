@@ -14,7 +14,7 @@
         </div>
         <div class="CardDescription">
             <p class="CardDescrptionText"> {{ description }}</p>
-            <span>เมนูแนะนำ:</span> {{ recommendation }}
+            <span class="text-black">เมนูแนะนำ:</span> {{ recommendation }}
         </div>
     </div>
 </template>
@@ -33,18 +33,25 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+.Card {
+    @apply border border-primary font-medium;
+}
 .CardImage {
     @apply w-full;
     min-height: 14rem;
     height: auto;
 }
 
-.CardHeaderText {
+.CardHeaderText, .CardDescription {
     @apply p-4 flex-1;
 }
 
+.CardInfo, .CardDescription {
+    @apply text-text-gray;
+}
+
 @screen lg {
-    .Card {
+    .Card k{
         @apply flex;
     }
 }
