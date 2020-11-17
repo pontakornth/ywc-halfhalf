@@ -7,7 +7,12 @@
        <div class="Menu">
          <div class="Drawer"></div>
          <div class="CardGrid">
-           <shop-card name="ร้านหมูกระทะวายดับบลิวซี " imageUrl="https://loremflickr.com/320/240" />
+           <shop-card 
+               name="ร้านหมูกระทะวายดับบลิวซี" 
+               tag="เปิดอยู่" 
+               imageUrl="https://loremflickr.com/320/240"
+               :recommenedItem="['ไก่ทอดหากเล็ก', 'หมูห้าชั้น']"
+             />
          </div>
        </div>
      </div>
