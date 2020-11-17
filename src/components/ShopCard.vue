@@ -4,7 +4,7 @@
             <img class="CardImage" :src="imageUrl">
             <div class="CardHeaderText">
                 <h3 class="CardTitle">{{ name }}</h3>
-                <span v-if="tag">{{ tag }}</span>
+                <span class="Tag" v-if="tag">{{ tag }}</span>
                 <div class="CardInfo">
                     <span class="CardInfoItem">{{ category }} </span>
                     <span v-if="priceLevel" class="CardInfoItem"> {{ priceLevel }} </span>
@@ -14,7 +14,7 @@
         </div>
         <div class="CardDescription">
             <p class="CardDescrptionText"> {{ description }}</p>
-            <span class="text-black">เมนูแนะนำ:</span> {{ recommendation }}
+            <span class="text-text-dark">เมนูแนะนำ:</span> <span>{{ recommendation }}</span>
         </div>
     </div>
 </template>
@@ -28,6 +28,12 @@ export default {
         category: String,
         priceLevel: Number,
         imageUrl: String,
+        recommenedItem: Array
+    },
+    computed: {
+        recommendation() {
+            return this.recommenedItem.join(",")
+        }
     }
 }
 </script>
@@ -38,7 +44,7 @@ export default {
 }
 
 .CardTitle {
-    @apply font-bold text-xl;
+    @apply font-bold text-xl inline-block pr-4;
 }
 .CardImage {
     @apply w-full;
@@ -50,12 +56,17 @@ export default {
     @apply p-4 flex-1;
 }
 
-.CardInfo, .CardDescription {
-    @apply text-text-gray;
+.Tag {
+    padding: .33em;
+    @apply text-sm font-bold rounded-sm inline-block bg-secondary text-white;
 }
 
+.CardInfo, .CardDescription {
+    @apply text-text-gray; 
+ }
+
 @screen lg {
-    .Card k{
+    .Card{
         @apply flex;
     }
 }
