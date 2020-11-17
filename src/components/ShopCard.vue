@@ -27,8 +27,9 @@ export default {
         tag: String,
         category: String,
         priceLevel: Number,
+        location: String,
         imageUrl: String,
-        recommenedItem: Array
+        recommenedItem: Array,
     },
     computed: {
         recommendation() {
@@ -63,8 +64,21 @@ export default {
 
 .CardInfo, .CardDescription {
     @apply text-text-gray; 
- }
+}
 
+.CardInfo {
+    @apply flex;
+}
+
+.CardInfo span {
+    @apply inline-block ;
+}
+
+.CardInfo span:not(:last-child)::after {
+    content: '|';
+    @apply text-text-gray px-2;
+
+}
 @screen lg {
     .Card{
         @apply flex;

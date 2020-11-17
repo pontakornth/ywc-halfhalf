@@ -9,7 +9,10 @@
          <div class="CardGrid">
            <shop-card 
                name="ร้านหมูกระทะวายดับบลิวซี" 
-               tag="เปิดอยู่" 
+               tag="เปิดอยู่"
+               category="ร้านหมูกระทะ"
+               :priceLevel="3"
+               location="bangkok"
                imageUrl="https://loremflickr.com/320/240"
                :recommenedItem="['ไก่ทอดหากเล็ก', 'หมูห้าชั้น']"
              />
