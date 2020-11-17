@@ -31,6 +31,7 @@ export default {
         priceLevel: Number,
         location: String,
         imageUrl: String,
+        description: String,
         recommenedItem: Array,
     },
     computed: {
@@ -43,7 +44,7 @@ export default {
 
 <style lang="postcss" scoped>
 .Card {
-    @apply border border-blue-100 font-medium;
+    @apply border border-blue-200 font-medium;
 }
 
 .CardTitle {
@@ -68,9 +69,14 @@ export default {
     @apply text-text-gray; 
 }
 
-.CardInfo {
-    @apply flex;
+.CardDescription > p {
+    @apply pb-2;
 }
+
+.CardInfo {
+    @apply flex pb-4 border-b border-gray-200 ;
+}
+
 
 .CardInfo span {
     @apply inline-block ;

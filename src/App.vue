@@ -14,6 +14,7 @@
                :priceLevel="2"
                location="bangkok"
                imageUrl="https://loremflickr.com/320/240"
+               description="มีของกินจำนวนมาก"
                :recommenedItem="['ไก่ทอดหากเล็ก', 'หมูห้าชั้น']"
              />
          </div>
