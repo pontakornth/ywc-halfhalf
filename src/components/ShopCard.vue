@@ -27,6 +27,7 @@ export default {
         tag: String,
         category: String,
         priceLevel: Number,
+        imageUrl: String,
     }
 }
 </script>
