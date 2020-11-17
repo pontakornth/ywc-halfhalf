@@ -11,7 +11,7 @@
                name="ร้านหมูกระทะวายดับบลิวซี" 
                tag="เปิดอยู่"
                category="ร้านหมูกระทะ"
-               :priceLevel="3"
+               :priceLevel="2"
                location="bangkok"
                imageUrl="https://loremflickr.com/320/240"
                :recommenedItem="['ไก่ทอดหากเล็ก', 'หมูห้าชั้น']"

@@ -7,7 +7,9 @@
                 <span class="Tag" v-if="tag">{{ tag }}</span>
                 <div class="CardInfo">
                     <span class="CardInfoItem">{{ category }} </span>
-                    <span v-if="priceLevel" class="CardInfoItem"> {{ priceLevel }} </span>
+                    <span v-if="priceLevel" class="CardInfoItem"> 
+                        <span v-for="i in 3" :class="i <= priceLevel && 'text-text-dark'" :key="i">฿</span>
+                    </span>
                     <span class="CardInfoItem"> {{ location }} </span>
                 </div>
             </div>
@@ -74,7 +76,7 @@ export default {
     @apply inline-block ;
 }
 
-.CardInfo span:not(:last-child)::after {
+.CardInfo > span:not(:last-child)::after {
     content: '|';
     @apply text-text-gray px-2;
 
