@@ -39,6 +39,9 @@ export default {
 }
 </script>
 <style lang="postcss">
+.Page {
+  background: url('./assets/result-bg.png');
+}
 .PageTitle {
   @apply font-bold text-xl p-3 py-6;
 }

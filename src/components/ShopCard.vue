@@ -1,7 +1,7 @@
 <template>
     <div class="Card">
+        <img class="CardImage" :src="imageUrl">
         <div class="CardHeader">
-            <img class="CardImage" :src="imageUrl">
             <div class="CardHeaderText">
                 <h3 class="CardTitle">{{ name }}</h3>
                 <span class="Tag" v-if="tag">{{ tag }}</span>
@@ -89,7 +89,27 @@ export default {
 }
 @screen lg {
     .Card{
-        @apply flex;
+        @apply grid;
+        grid-template-areas:
+        'image header header'
+        'image description description';
+        grid-template-columns: 250px 1fr 1fr;
+        grid-gap: 0;
     }
+    
+    .CardHeader {
+        grid-area: header;
+    }
+
+    .CardImage {
+        @apply p-2;
+        grid-area: image;
+        height: auto;
+    }
+
+    .CardDescription {
+        grid-area: description;
+        margin-top: -2rem;
+    } 
 }
 </style>
