@@ -6,7 +6,8 @@ module.exports = {
                 secondary: "#24C200",
                 menu: "#A1A1A1",
                 "text-gray": "#C2C2C2",
-                "text-black": "#595959"
+                "text-black": "#595959",
+                "text-dark": "#444444"
             }
         }
     }
