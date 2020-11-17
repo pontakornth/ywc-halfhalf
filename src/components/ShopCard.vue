@@ -40,7 +40,7 @@ export default {
 
 <style lang="postcss" scoped>
 .Card {
-    @apply border border-primary font-medium;
+    @apply border border-blue-100 font-medium;
 }
 
 .CardTitle {
