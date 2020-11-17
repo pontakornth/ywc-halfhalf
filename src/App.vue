@@ -7,7 +7,7 @@
        <div class="Menu">
          <div class="Drawer"></div>
          <div class="CardGrid">
-           <shop-card name="Title" imageUrl="https://loremflickr.com/320/240" />
+           <shop-card name="ร้านหมูกระทะวายดับบลิวซี " imageUrl="https://loremflickr.com/320/240" />
          </div>
        </div>
      </div>
