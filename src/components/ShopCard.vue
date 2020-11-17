@@ -36,6 +36,10 @@ export default {
 .Card {
     @apply border border-primary font-medium;
 }
+
+.CardTitle {
+    @apply font-bold text-xl;
+}
 .CardImage {
     @apply w-full;
     min-height: 14rem;
