@@ -1,6 +1,6 @@
 <template>
      <nav class="Navigation">
-       <a href="/">หน้าแรก</a>
+       <a class="underline font-medium" href="/">หน้าแรก</a>
        <span>/</span>
        <span class="font-bold">ค้นหา</span>
      </nav>
