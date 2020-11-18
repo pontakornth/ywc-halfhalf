@@ -8,6 +8,7 @@ const tailwindcss = require('tailwindcss')
 
 module.exports = {
     plugins: [
+        nested(),
         tailwindcss(),
         autoprefixer(),
         // isProduction && purgecss()
