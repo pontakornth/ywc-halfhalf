@@ -21,7 +21,7 @@ export default {
 <style lang="postcss" scoped>
 .Radio {
     @apply gap-2 py-2;
-    color: rebeccapurple;
+    color: #1990ff;
     display: grid;
     grid-template-columns: min-content auto;
 }
@@ -52,7 +52,7 @@ export default {
 }
 
 .RadioInput input:checked + .RadioControl {
-    background: radial-gradient(currentcolor 50%, rgba(255, 0, 0, 0) 51%);
+    background: radial-gradient(#1990ff 50%, rgba(255, 0, 0, 0) 51%);
 }
 
 .RadioInput input:checked + .RadioControl {
