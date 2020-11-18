@@ -70,6 +70,10 @@ export default {
   .Logo--mini {
     display: none;
   }
+  
+  .Filter {
+    @apply invisible;
+  }
 }
 
 </style>
