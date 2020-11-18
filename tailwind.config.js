@@ -5,7 +5,7 @@ module.exports = {
                 primary: "#283B7C",
                 secondary: "#24C200",
                 menu: "#A1A1A1",
-                "text-gray": "#C2C2C2",
+                "text-gray": "#A4A4A4",
                 "text-black": "#595959",
                 "text-dark": "#444444"
             }
