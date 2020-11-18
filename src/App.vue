@@ -5,7 +5,7 @@
      <h1 class="PageTitle">ผลการค้นหา อาหารเครื่องดื่มทั้งหมด</h1>
      <div class="PageContainer">
        <div class="Menu">
-         <div class="Drawer"></div>
+         <drawer />
          <div class="CardGrid">
            <shop-card 
                name="ร้านหมูกระทะวายดับบลิวซี" 
@@ -28,13 +28,15 @@ import SearchBar from './components/SearchBar.vue';
 import "../node_modules/@ibm/plex/css/ibm-plex.css";
 import Navigation from './components/Navigation.vue';
 import ShopCard from './components/ShopCard.vue';
+import Drawer from './components/Drawer.vue';
 
 export default {
   name: 'App',
   components: {
     SearchBar,
     Navigation,
-    ShopCard
+    ShopCard,
+    Drawer
   }
 }
 </script>
@@ -47,5 +49,17 @@ export default {
 }
 .PageContainer {
   @apply w-full mx-auto relative p-4;
+}
+
+.CardGrid {
+  @apply flex-1 grid gap-2;
+  grid-template-columns: 1fr;
+}
+
+
+@screen md {
+  .Menu {
+    @apply flex;
+  }
 }
 </style>
