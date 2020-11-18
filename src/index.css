@@ -6,6 +6,10 @@ html, body {
     font-family: "IBM Plex Sans Thai", sans-serif;
 }
 
+*,*::before, *::after {
+    box-sizing: border-box;
+}
+
 @tailwind components;
 
 @tailwind utilities;
