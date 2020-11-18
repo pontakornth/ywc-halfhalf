@@ -1,37 +1,24 @@
 <template>
-    <div class="Drawer">
-        <div class="FilterGroup">
-            <label class="FilterLabel">ประเภทร้านค้า</label>
-            <radio-button text="ทั้งหมด" value="ทั้งหมด" />
-            <radio-button text="ร้านอาหารและเครื่องดื่ม" value="ร้านอาหารและเครื่องดื่ม" />
-        </div>
-        <div class="FilterGroup">
-        </div>
-</div>
+    <label class="Radio">
+        <span class="RadioInput">
+            <input type="radio" :value="value">
+            <span class="RadioControl"></span>
+        </span>
+        <span class="RadioLabel">{{ text }}</span>
+    </label>
 </template>
 
 <script>
-import RadioButton from './RadioButton.vue'
 export default {
-components: { RadioButton },
-name: "Drawer",
+    name: "Radio",
+    props: {
+        value: String,
+        text: String,
+    }
 }
 </script>
 
 <style lang="postcss" scoped>
-.Drawer {
-@apply p-2 w-1/4 border border-blue-200 mr-8;
-display: none;
-}
-
-.FilterGroup {
-@apply p-2 ;
-}
-
-.FilterLabel {
-    @apply font-bold;
-}
-
 .Radio {
     @apply gap-2 py-2;
     color: rebeccapurple;
@@ -45,6 +32,7 @@ display: none;
 }
 
 .RadioLabel {
+    @apply text-text-dark;
     line-height: 1;
 }
 
@@ -71,9 +59,4 @@ display: none;
     box-shadow: 0 0 0 0.05em #fff, 0 0 0.15em 0.1em currentColor;
 }
 
-@screen md {
-    .Drawer {
-        @apply block;
-    }
-}
 </style>
