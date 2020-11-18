@@ -6,6 +6,9 @@
             <radio-button text="ร้านอาหารและเครื่องดื่ม" value="ร้านอาหารและเครื่องดื่ม" />
         </div>
         <div class="FilterGroup">
+            <label class="FilterLabel">ใกล้ฉัน / ทั้งหมด</label>
+            <!-- TODO: Implement real dropdown -->
+            <input class="p-2 rounded my-4 block w-full border border-blue-300" type="text" placeholder="Placeholder" name="Place" />
         </div>
 </div>
 </template>
