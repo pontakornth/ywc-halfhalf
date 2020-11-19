@@ -28,6 +28,7 @@
                 description="มีของกินจำนวนมาก"
                 :recommenedItem="['ไก่ทอดหากเล็ก', 'หมูห้าชั้น']"
               />
+            <div class="Button">ดูเพิ่มเติม</div>
           </div>
 
          </div>
@@ -93,6 +94,10 @@ export default {
 .CardGrid {
   @apply grid gap-2;
   grid-template-columns: 1fr;
+}
+
+.Button {
+  @apply mx-auto p-4 w-1/2 text-center rounded cursor-pointer border my-8 border-menu bg-white text-text-dark;
 }
 
 
