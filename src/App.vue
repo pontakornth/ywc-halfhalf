@@ -91,7 +91,7 @@ export default {
 }
 
 .CardGrid {
-  @apply flex-1 grid gap-2;
+  @apply grid gap-2;
   grid-template-columns: 1fr;
 }
 
