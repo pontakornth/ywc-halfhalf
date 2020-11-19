@@ -5,28 +5,31 @@
      <h1 class="PageTitle">ผลการค้นหา อาหารเครื่องดื่มทั้งหมด</h1>
      <div class="PageContainer">
        <div class="Menu">
-         <drawer />
-         <div class="CardGrid">
-           <shop-card 
-               name="ร้านหมูกระทะวายดับบลิวซี" 
-               tag="เปิดอยู่"
-               category="ร้านหมูกระทะ"
-               :priceLevel="2"
-               location="bangkok"
-               imageUrl="https://loremflickr.com/320/240"
-               description="มีของกินจำนวนมาก"
-               :recommenedItem="['ไก่ทอดหากเล็ก', 'หมูห้าชั้น']"
-             />
-           <shop-card 
-               name="ร้านหมูกระทะวายดับบลิวซี" 
-               tag="เปิดอยู่"
-               category="ร้านหมูกระทะ"
-               :priceLevel="2"
-               location="bangkok"
-               imageUrl="https://loremflickr.com/320/240"
-               description="มีของกินจำนวนมาก"
-               :recommenedItem="['ไก่ทอดหากเล็ก', 'หมูห้าชั้น']"
-             />
+         <drawer v-if="fetchedData" :subCategories="subCategories" :categories="categories"/>
+         <div class="CardGridWrapper">
+          <div class="CardGrid">
+            <shop-card 
+                name="ร้านหมูกระทะวายดับบลิวซี" 
+                tag="เปิดอยู่"
+                category="ร้านหมูกระทะ"
+                :priceLevel="2"
+                location="bangkok"
+                imageUrl="https://loremflickr.com/320/240"
+                description="มีของกินจำนวนมาก"
+                :recommenedItem="['ไก่ทอดหากเล็ก', 'หมูห้าชั้น']"
+              />
+            <shop-card 
+                name="ร้านหมูกระทะวายดับบลิวซี" 
+                tag="เปิดอยู่"
+                category="ร้านหมูกระทะ"
+                :priceLevel="2"
+                location="bangkok"
+                imageUrl="https://loremflickr.com/320/240"
+                description="มีของกินจำนวนมาก"
+                :recommenedItem="['ไก่ทอดหากเล็ก', 'หมูห้าชั้น']"
+              />
+          </div>
+
          </div>
        </div>
      </div>
@@ -41,6 +44,28 @@ import ShopCard from './components/ShopCard.vue';
 import Drawer from './components/Drawer.vue';
 
 export default {
+  data() {
+    return {
+      fetchedData: {}
+    }
+  },
+  computed: {
+    categories() {
+      return this.fetchedData.categories.map(category => category.name)
+    },
+    subCategories() {
+      // This is for food and drink only as the picture only show them
+      return this.fetchedData.categories[0].subcategories
+    }
+  },
+  created() {
+    fetch("https://panjs.com/ywc18.json")
+        .then(res => res.json())
+        .then(json => {
+          this.fetchedData = json
+          console.log(json)
+        })
+  },
   name: 'App',
   components: {
     SearchBar,
@@ -59,6 +84,10 @@ export default {
 }
 .PageContainer {
   @apply w-full mx-auto relative p-4;
+}
+
+.CardGridWrapper {
+  @apply flex-1;
 }
 
 .CardGrid {
