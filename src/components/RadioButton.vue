@@ -44,17 +44,30 @@ export default {
 }
 
 .RadioControl {
-    display: block;
+    @apply border border-blue-300;
+    display: grid;
+    place-items: center;
     width: 1em;
     height: 1em;
     border-radius: 50%;
-    border: 0.1em solid currentColor;
-    transform: translateY(-0.05em);
+    transform: translateY(-.1em);
 }
 
-.RadioInput input:checked + .RadioControl {
-    background: radial-gradient(#1990ff 50%, rgba(255, 0, 0, 0) 51%);
+input + .RadioControl::before {
+    content: "";
+    width: .5em;
+    height: .5em;
+    border-radius: 50%;
+    transition: 180ms transform ease-in-out;
+    box-shadow: inset .5em .5em currentColor;
+    transform: scale(0);
 }
+
+input:checked + .RadioControl::before {
+    transform: scale(1);
+
+}
+
 
 .RadioInput input:checked + .RadioControl {
     box-shadow: 0 0 0 0.05em #fff, 0 0 0.15em 0.1em currentColor;
