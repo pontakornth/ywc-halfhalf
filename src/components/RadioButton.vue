@@ -24,6 +24,7 @@ export default {
     color: #1990ff;
     display: grid;
     grid-template-columns: min-content auto;
+    margin-left: 1rem;
 }
 
 .RadioInput {
