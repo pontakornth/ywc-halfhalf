@@ -50,6 +50,7 @@ export default {
   @apply absolute border-l px-4;
   height: 3rem;
   right: 0;
+  background: #f8f8f8;
 }
 
 .InputBar {
