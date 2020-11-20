@@ -8,25 +8,14 @@
          <drawer v-if="fetchedData" :subCategories="subCategories" :categories="categories"/>
          <div class="CardGridWrapper">
           <div class="CardGrid">
-            <shop-card 
-                name="ร้านหมูกระทะวายดับบลิวซี" 
-                tag="เปิดอยู่"
-                category="ร้านหมูกระทะ"
-                :priceLevel="2"
-                location="bangkok"
-                imageUrl="https://loremflickr.com/320/240"
-                description="มีของกินจำนวนมาก"
-                :recommenedItem="['ไก่ทอดหากเล็ก', 'หมูห้าชั้น']"
-              />
-            <shop-card 
-                name="ร้านหมูกระทะวายดับบลิวซี" 
-                tag="เปิดอยู่"
-                category="ร้านหมูกระทะ"
-                :priceLevel="2"
-                location="bangkok"
-                imageUrl="https://loremflickr.com/320/240"
-                description="มีของกินจำนวนมาก"
-                :recommenedItem="['ไก่ทอดหากเล็ก', 'หมูห้าชั้น']"
+              <shop-card v-for="(m, index) in merchants" :key="index"
+                :name="m.shopNameTH"
+                :category="m.categoryName"
+                :priceLevel="m.priceLevel"
+                :location="m.addressDistrictName +  ' ' + m.addressProvinceName"
+                :imageUrl="m.coverImageId"
+                :description="m.highlightText"
+                :recommenedItem="m.recommendedItems"
               />
             <div class="Button">ดูเพิ่มเติม</div>
           </div>
@@ -57,6 +46,9 @@ export default {
     subCategories() {
       // This is for food and drink only as the picture only show them
       return this.fetchedData.categories[0].subcategories
+    },
+    merchants() {
+      return this.fetchedData.merchants
     }
   },
   created() {

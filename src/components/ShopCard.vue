@@ -4,7 +4,7 @@
         <div class="CardHeader">
             <div class="CardHeaderText">
                 <h3 class="CardTitle">{{ name }}</h3>
-                <span class="Tag" v-if="tag">{{ tag }}</span>
+                <span class="Tag" v-if="['Y', 'N'].includes(tag)"> {{ tagText }}</span>
                 <div class="CardInfo">
                     <span class="CardInfoItem">{{ category }} </span>
                     <span v-if="priceLevel" class="CardInfoItem"> 
@@ -37,6 +37,16 @@ export default {
     computed: {
         recommendation() {
             return this.recommenedItem.join(",")
+        },
+        tagText() {
+            switch (this.tag) {
+                case 'Y':
+                    return 'เปิดอยู่'
+                    break
+                case 'N':
+                    return 'ปิดแล้ว'
+                    break
+            }
         }
     }
 }
@@ -63,6 +73,14 @@ export default {
 .Tag {
     padding: .33em;
     @apply text-sm font-bold rounded-sm inline-block bg-secondary text-white;
+}
+
+.Tag--open {
+    @apply bg-secondary;
+}
+
+.Tag--close {
+    @apply bg-text-dark;
 }
 
 .CardInfo, .CardDescription {
