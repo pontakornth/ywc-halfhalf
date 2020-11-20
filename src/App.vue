@@ -10,7 +10,7 @@
           <div class="CardGrid">
               <shop-card v-for="(m, index) in merchants" :key="index"
                 :name="m.shopNameTH"
-                :category="m.categoryName"
+                :category="m.subcategoryName"
                 :priceLevel="m.priceLevel"
                 :location="m.addressDistrictName +  ' ' + m.addressProvinceName"
                 :imageUrl="m.coverImageId"
