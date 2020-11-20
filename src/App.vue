@@ -16,6 +16,7 @@
                 :imageUrl="m.coverImageId"
                 :description="m.highlightText"
                 :recommenedItem="m.recommendedItems"
+                :tag="m.isOpen"
               />
             <div class="Button">ดูเพิ่มเติม</div>
           </div>

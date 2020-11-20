@@ -4,7 +4,7 @@
         <div class="CardHeader">
             <div class="CardHeaderText">
                 <h3 class="CardTitle">{{ name }}</h3>
-                <span class="Tag" v-if="['Y', 'N'].includes(tag)"> {{ tagText }}</span>
+                <span :class="`Tag ${tag == 'Y' ? 'Tag--open' : 'Tag--close'}`" v-if="['Y', 'N'].includes(tag)"> {{ tagText }}</span>
                 <div class="CardInfo">
                     <span class="CardInfoItem">{{ category }} </span>
                     <span v-if="priceLevel" class="CardInfoItem"> 
@@ -72,8 +72,9 @@ export default {
 }
 
 .Tag {
-    padding: .33em;
+    padding: .33em .5em;
     @apply text-sm font-bold rounded-sm inline-block bg-secondary text-white;
+    transform: translateY(-10%);
 }
 
 .Tag--open {
@@ -81,7 +82,7 @@ export default {
 }
 
 .Tag--close {
-    @apply bg-text-dark;
+    @apply bg-text-gray;
 }
 
 .CardInfo, .CardDescription {
@@ -99,6 +100,10 @@ export default {
 
 .CardInfo span {
     @apply inline-block ;
+}
+
+.BadgeContainer {
+    @apply flex flex-wrap mb-4 mt-4
 }
 
 .CardInfo > span:not(:last-child)::after {
