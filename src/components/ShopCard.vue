@@ -15,7 +15,8 @@
             </div>
         </div>
         <div class="CardDescription">
-            <p class="CardDescrptionText"> {{ description }}</p>
+            <!-- I trust HTML here -->
+            <p class="CardDescrptionText" v-html="description"></p>
             <span class="text-text-dark">เมนูแนะนำ:</span> <span>{{ recommendation }}</span>
         </div>
     </div>
