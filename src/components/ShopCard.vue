@@ -7,9 +7,11 @@
                 <span :class="`Tag ${tag == 'Y' ? 'Tag--open' : 'Tag--close'}`" v-if="['Y', 'N'].includes(tag)"> {{ tagText }}</span>
                 <div class="CardInfo">
                     <span class="CardInfoItem">{{ category }} </span>
+                    <span class="mx-3">|</span>
                     <span v-if="priceLevel" class="CardInfoItem"> 
                         <span v-for="i in 3" :class="i <= priceLevel && 'text-text-dark'" :key="i">฿</span>
                     </span>
+                    <span class="mx-3">|</span>
                     <span class="CardInfoItem"> {{ location }} </span>
                 </div>
             </div>
@@ -94,7 +96,7 @@ export default {
 }
 
 .CardInfo {
-    @apply flex pb-4 border-b border-gray-200 ;
+    @apply flex flex-wrap pb-4 border-b border-gray-200 ;
 }
 
 
@@ -106,11 +108,6 @@ export default {
     @apply flex flex-wrap mb-4 mt-4
 }
 
-.CardInfo > span:not(:last-child)::after {
-    content: '|';
-    @apply text-text-gray px-2;
-
-}
 @screen lg {
     .Card{
         @apply grid;
