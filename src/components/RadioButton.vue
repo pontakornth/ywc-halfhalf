@@ -1,7 +1,7 @@
 <template>
     <label class="Radio">
         <span class="RadioInput">
-            <input type="radio" :value="value">
+            <input type="radio" :value="value" :checked="isChecked">
             <span class="RadioControl"></span>
         </span>
         <span class="RadioLabel">{{ text }}</span>
@@ -10,10 +10,25 @@
 
 <script>
 export default {
+    model: {
+        prop: 'modelValue',
+        event: 'change'
+    },
     name: "Radio",
     props: {
+        modelValue: String,
         value: String,
         text: String,
+    },
+    computed: {
+        isChecked() {
+            return this.value == this.modelValue
+        }
+    },
+    methods: {
+        updateInput() {
+            this.$emit('change', this.value)
+        }
     }
 }
 </script>

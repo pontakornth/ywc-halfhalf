@@ -23,6 +23,7 @@
                 :description="m.highlightText"
                 :recommenedItem="m.recommendedItems"
                 :tag="m.isOpen"
+                :facilities="m.facilities"
               />
             <div class="Button">ดูเพิ่มเติม</div>
           </div>

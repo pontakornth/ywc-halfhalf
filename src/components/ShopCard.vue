@@ -20,6 +20,11 @@
             <!-- I trust HTML here -->
             <p class="CardDescrptionText" v-html="description"></p>
             <span class="text-text-dark">เมนูแนะนำ:</span> <span>{{ recommendation }}</span>
+            <div class="FacilitiesContainer">
+                <span v-for="(facility, index) in facilities" :key="index" class="FacilityIcon">
+                    <img :src="`${facility}.png`" />
+                </span>
+            </div>
         </div>
     </div>
 </template>
@@ -36,6 +41,7 @@ export default {
         imageUrl: String,
         description: String,
         recommenedItem: Array,
+        facilities: Array,
     },
     computed: {
         recommendation() {
@@ -104,8 +110,19 @@ export default {
     @apply inline-block ;
 }
 
-.BadgeContainer {
+.FacilitiesContainer {
     @apply flex flex-wrap mb-4 mt-4
+}
+
+.FacilityIcon {
+    @apply rounded-full border border-secondary;
+    margin-right: 6px;
+    margin-bottom: 3px;
+}
+
+.FacilityIcon img {
+    width: 1.1rem;
+    height: 1.1rem;
 }
 
 @screen lg {
