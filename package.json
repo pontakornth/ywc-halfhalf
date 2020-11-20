@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/ywc-halfhalf/",
-    "build:debug": "vite build"
+    "build:page": "vite build --base=/ywc-halfhalf/",
+    "build": "vite build"
   },
   "dependencies": {
     "@ibm/plex": "^5.1.3",
