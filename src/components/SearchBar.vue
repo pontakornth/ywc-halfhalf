@@ -9,10 +9,10 @@
       <div class="InputBar">
         <input class="Input" v-model="term" placeholder="ค้นหา ชื่อ ร้านอาหาร และเครื่องดื่ม">
         <button class="SearchButton">
-          <Icon name="search" />
-        </button>
-      </div>
-      <img src="../assets/filter.png" class="Filter" />
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          </button>
+        </div>
+        <img src="../assets/filter.png" class="Filter" />
      </div>
 </template>
 
@@ -44,6 +44,12 @@ export default {
 
 .SearchBar {
   @apply flex justify-between items-center bg-white border;
+}
+
+.SearchButton {
+  @apply absolute border-l px-4;
+  height: 3rem;
+  right: 0;
 }
 
 .InputBar {
