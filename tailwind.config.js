@@ -1,9 +1,19 @@
 module.exports = {
-    purge: [
-    './src/**/*.html',
-    './src/**/*.vue',
-    './src/**/*.jsx',
-  ],
+    purge: {
+    content: [
+            './src/**/*.html',
+            './src/**/*.vue',
+            './src/**/*.jsx',
+    ],
+    options: {
+    defaultExtractor (content) {
+        const contentWithoutStyleBlocks = content.replace(/<style[^]+?<\/style>/gi, '')
+        return contentWithoutStyleBlocks.match(/[A-Za-z0-9-_/:]*[A-Za-z0-9-_/]+/g) || []
+    },
+    safelist: [ /-(leave|enter|appear)(|-(to|from|active))$/, /^(?!(|.*?:)cursor-move).+-move$/, /^router-link(|-exact)-active$/, /data-v-.*/ ],
+    
+    }
+  },
     theme: {
         extend: {
             fontFamily: {
