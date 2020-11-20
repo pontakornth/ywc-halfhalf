@@ -9,7 +9,7 @@
       <div class="InputBar">
         <input class="Input" v-model="term" placeholder="ค้นหา ชื่อ ร้านอาหาร และเครื่องดื่ม">
         <button class="SearchButton">
-            <span class="Icon"></span>
+          <Icon name="search" />
         </button>
       </div>
       <img src="../assets/filter.png" class="Filter" />
@@ -17,7 +17,12 @@
 </template>
 
 <script>
+import 'vue-awesome/icons/search'
+import Icon from 'vue-awesome/components/Icon.vue'
 export default {
+    components: {
+      Icon
+    },
     name: "SearchBar"
 }
 </script>
@@ -49,7 +54,7 @@ export default {
 }
 
 .Input {
-  @apply p-2;
+  @apply p-2 w-full;
 }
 
 .Filter {
