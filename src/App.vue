@@ -78,6 +78,7 @@ export default {
 </script>
 <style lang="postcss">
 .Page {
+  @apply bg-repeat-y bg-auto;
   background: url('./assets/result-bg.png');
 }
 .PageTitle {
@@ -97,7 +98,7 @@ export default {
 }
 
 .Button {
-  @apply mx-auto p-4 w-3/4 text-center rounded cursor-pointer border my-8 border-menu bg-white text-text-dark;
+  @apply mx-auto p-4 w-3/4 text-center rounded cursor-pointer border my-8 border-gray-400 bg-white text-text-dark;
 }
 
 
