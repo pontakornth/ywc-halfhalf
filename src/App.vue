@@ -5,7 +5,12 @@
      <h1 class="PageTitle">ผลการค้นหา อาหารเครื่องดื่มทั้งหมด</h1>
      <div class="PageContainer">
        <div class="Menu">
-         <drawer v-if="fetchedData" :subCategories="subCategories" :categories="categories"/>
+         <drawer v-if="fetchedData" 
+            :subCategories="subCategories" 
+            :categories="categories"
+            :provinces="provinces"
+            :handleUpdate="updateFiler"
+         />
          <div class="CardGridWrapper">
           <div class="CardGrid">
               <shop-card v-for="(m, index) in merchants" :key="index"
@@ -37,7 +42,10 @@ import Drawer from './components/Drawer.vue';
 export default {
   data() {
     return {
-      fetchedData: {}
+      fetchedData: {},
+      filterCategory: null,
+      filterSubcategory: null,
+      filterProvince: null,
     }
   },
   computed: {
@@ -50,6 +58,9 @@ export default {
     },
     merchants() {
       return this.fetchedData.merchants
+    },
+    provinces() {
+      return this.fetchedData.provinces;
     }
   },
   created() {

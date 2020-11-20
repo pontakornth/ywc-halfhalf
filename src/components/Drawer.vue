@@ -4,10 +4,9 @@
             <label class="FilterLabel">ประเภทร้านค้า</label>
             <radio-button v-for="(category, index) in categories" :key="index" :text="category" :value="category" />
         </div>
-        <div class="FilterGroup">
+        <div v-if="provinces" class="FilterGroup">
             <label class="FilterLabel">ใกล้ฉัน / ทั้งหมด</label>
-            <!-- TODO: Implement real dropdown -->
-            <input class="p-2 rounded my-4 block w-full border border-blue-300" type="text" placeholder="Placeholder" name="Place" />
+            <dropdown style="overflow: scroll;line-height: 1.5" v-model="category" :options="dropdownProvinces" placeholder="ใกล้ฉัน" optionLabel="name" />
         </div>
         <div class="FilterGroup">
             <label class="FilterLabel">ประเภทร้านอาหารเครื่องดื่ม</label>
@@ -19,9 +18,23 @@
 <script>
 import RadioButton from './RadioButton.vue'
 export default {
+    data() {
+        return {
+            category: null
+        }
+    },
+    computed: {
+        dropdownProvinces() {
+            if (this.provinces) {
+                return this.provinces.map(x => ({name: x}))
+            }
+            return []
+        }
+    },
     props: {
         categories: Array,
         subCategories: Array,
+        provinces: Array,
     },
     components: { RadioButton },
     name: "Drawer",
