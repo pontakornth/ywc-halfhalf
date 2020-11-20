@@ -697,6 +697,11 @@ cookies@~0.8.0:
     depd "~2.0.0"
     keygrip "~1.1.0"
 
+core-js@^3.4.4:
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.7.0.tgz#b0a761a02488577afbf97179e4681bf49568520f"
+  integrity sha512-NwS7fI5M5B85EwpWuIwJN4i/fbisQUwLwiSNUWeXlkAZ0sbBjLEvLvFLf1uzAUV66PcEPt4xCGCmOZSxVf3xzA==
+
 cosmiconfig@^7.0.0:
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/cosmiconfig/-/cosmiconfig-7.0.0.tgz#ef9b44d773959cae63ddecd122de23853b60f8d3"
@@ -2487,6 +2492,13 @@ vite@^1.0.0-rc.8:
     slash "^3.0.0"
     vue "^3.0.2"
     ws "^7.3.1"
+
+vue-awesome@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/vue-awesome/-/vue-awesome-4.1.0.tgz#1caf50eb1ed0193f3c5ba19cbde9bea356cbc78c"
+  integrity sha512-4n+hg8KIMrwjXV6sRHcRZd18Somih5j4Yk2ZOv95pnvDpzbBkIYW4ktfivhqgNt50m0zDjmeEWiy1iVLtcccfw==
+  dependencies:
+    core-js "^3.4.4"
 
 vue@^3.0.2:
   version "3.0.2"
