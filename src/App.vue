@@ -10,6 +10,7 @@
             :categories="categories"
             :provinces="provinces"
             :handleUpdate="updateFiler"
+            :priceRange="priceRange"
          />
          <div class="CardGridWrapper">
           <div class="CardGrid">
@@ -61,6 +62,9 @@ export default {
     },
     provinces() {
       return this.fetchedData.provinces;
+    },
+    priceRange() {
+      return this.fetchedData.priceRange;
     }
   },
   created() {
