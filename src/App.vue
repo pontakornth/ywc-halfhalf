@@ -70,7 +70,7 @@ export default {
 </script>
 <style lang="postcss">
 .Page {
-  @apply bg-repeat-y bg-auto;
+  @apply bg-repeat-y ;
   background: url('./assets/result-bg.png');
 }
 .PageTitle {
