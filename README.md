@@ -1,6 +1,6 @@
 # YWC Half Half Interview Homework
 
-## How to build
+## How to build (Manual)
 1. Copy fonts file from @ibm/plex module to project folder
 2. Run "yarn build"
 3. Deploy project in dist folder.
