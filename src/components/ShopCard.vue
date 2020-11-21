@@ -17,8 +17,10 @@
             </div>
         </div>
         <div class="CardDescription">
-            <!-- I trust HTML here -->
-            <p class="CardDescrptionText" v-html="description"></p>
+            <!-- Not anymore -->
+            <p class="CardDescrptionText" >
+                {{ description }}
+            </p>
             <span class="text-text-dark">เมนูแนะนำ:</span> <span>{{ recommendation }}</span>
             <div class="FacilitiesContainer">
                 <span v-for="(facility, index) in facilities" :key="index" class="FacilityIcon">
@@ -56,7 +58,7 @@ export default {
                     return 'ปิดแล้ว'
                     break
             }
-        }
+        },
     }
 }
 </script>
