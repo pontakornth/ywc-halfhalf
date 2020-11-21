@@ -18,8 +18,8 @@
         </div>
         <div class="CardDescription">
             <!-- Not anymore -->
-            <p class="CardDescrptionText" >
-                {{ description }}
+            <p class="CardDescrptionText" v-html="safeDescription">
+                
             </p>
             <span class="text-text-dark">เมนูแนะนำ:</span> <span>{{ recommendation }}</span>
             <div class="FacilitiesContainer">
@@ -32,6 +32,7 @@
 </template>
 
 <script>
+import sanitize from '../assets/HtmlSanitizer'
 export default {
     name: "ShopCard",
     props: {
@@ -59,6 +60,9 @@ export default {
                     break
             }
         },
+        safeDescription() {
+            return sanitize.SanitizeHtml(this.description)
+        }
     }
 }
 </script>
